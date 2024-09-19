@@ -41,6 +41,15 @@ case $1 in
 	ui="☕"
 	ci="🎨"
 	;;
+"-a")
+	font=emoji
+	osi="🖥️"
+	ki="💾"
+	ri="💿"
+	pi="📦"
+	ui="⏳"
+	ci="🎨"
+	;;
 "-v")
 	echo "NerdFetch $version"
 	exit
@@ -50,6 +59,7 @@ case $1 in
 -c: Cozette font
 -p: Phosphor font
 -e: Emoji font
+-a: Custom font by pan
 -v: Version"
 	exit
 	;;
@@ -324,7 +334,7 @@ case $ostype in
 	mem_used=0
 	;;
 esac
-memstat="${mem_used}/${mem_full} MiB"
+memstat="${mem_used}/${mem_full} MiB RAM used"
 if command -v expr 1>/dev/null; then
 	mempercent="($(expr $(expr ${mem_used} \* 100 / ${mem_full}))%)"
 fi
